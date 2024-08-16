@@ -17,7 +17,7 @@ A simple GUI application for downloading audio from YouTube videos and convertin
 ## 🚀 Features
 
 - Download audio from YouTube videos.
-- Convert audio to MP3, WAV, OGG, FLAC, or M4A formats.
+- Convert audio to MP3, WAV or FLAC formats.
 - Progress bar showing download and conversion status.
 - Dark and light mode toggle.
 - GUI-based file and folder selection.
@@ -111,7 +111,7 @@ A simple GUI application for downloading audio from YouTube videos and convertin
 
 2. **Enter the YouTube video link** and select the destination folder where you want to save the audio file.
 
-3. **Click "Download Audio"** to start the download and conversion process.
+3. **Click in any file format** to start the download and conversion process.
 
 4. **Monitor the progress** using the progress bar and status label.
 
