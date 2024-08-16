@@ -1,4 +1,4 @@
-# 🎵 YouTube Audio Downloader
+# 🎵 YouTube Audio Downloader (YAD)
 
 A simple GUI application for downloading audio from YouTube videos and converting it to various formats. This application uses `yt-dlp` for downloading and `ffmpeg` for audio conversion.
 
