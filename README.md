@@ -2,6 +2,10 @@
 
 A simple GUI application for downloading audio from YouTube videos and converting it to various formats. This application uses `yt-dlp` for downloading and `ffmpeg` for audio conversion.
 
+<p align="center">
+  <img src="img/screenshot.png" alt="Screenshot">
+</p>
+
 ## 📋 Table of Contents
 
 - [Features](#features)
