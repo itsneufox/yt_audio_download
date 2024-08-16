@@ -100,15 +100,14 @@ A simple GUI application for downloading audio from YouTube videos and convertin
 
 1. **Run the application**:
 
-    - **If you didn't generate an executable:**
+    - **If you didn't generate an executable run:**
 
         ```bash
         python app.py
         ```
         
-    - **If you generated an executable:**
-
-        Just run the generated executable.
+    - **If you generated an executable just run the generated executable.**
+      
 
 2. **Enter the YouTube video link** and select the destination folder where you want to save the audio file.
 
