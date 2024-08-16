@@ -130,4 +130,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🎖️ Credits
 
 This project is based on the work of [guighfunky](https://github.com/guighfunky) from the repository [baixador_audio_yt](https://github.com/guighfunky/baixador_audio_yt).
+
 Be warned that the original code [was generated on ChatGPT](https://x.com/funkyblackcat/status/1794527287343276539)
