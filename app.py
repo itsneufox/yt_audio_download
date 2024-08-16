@@ -32,8 +32,21 @@ def update_progress(percent, progress_var, progress_bar):
 
 # Function to download the audio
 def download_audio(url, destination_folder, progress_var, progress_bar, status_label):
-    # Get the path to the bundled ffmpeg and ffprobe binaries
-    ffmpeg_path = os.path.join(os.path.dirname(sys.executable), 'bin')
+    # Get the path to the directory where the executable is located
+    if getattr(sys, 'frozen', False):
+        # If the app is running as a bundled executable
+        bundle_dir = sys._MEIPASS
+    else:
+        # If running in a normal Python environment
+        bundle_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Define the paths to ffmpeg and ffprobe
+    ffmpeg_path = os.path.join(bundle_dir, 'ffmpeg', 'ffmpeg.exe')
+    ffprobe_path = os.path.join(bundle_dir, 'ffmpeg', 'ffprobe.exe')
+
+    # Debug: Print the ffmpeg and ffprobe paths
+    print(f"ffmpeg_path: {ffmpeg_path}")
+    print(f"ffprobe_path: {ffprobe_path}")
     
     ydl_opts = {
         'format': 'bestaudio/best',
@@ -46,7 +59,7 @@ def download_audio(url, destination_folder, progress_var, progress_bar, status_l
         'ffmpeg_location': ffmpeg_path,  # Set path to ffmpeg and ffprobe
         'progress_hooks': [lambda d: progress_hook(d, progress_var, progress_bar, status_label)]
     }
-    
+
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             ydl.download([url])
