@@ -51,7 +51,7 @@ def download_audio(url, destination_folder, audio_format, progress_var, progress
             'preferredquality': '192',
         }],
         'ffmpeg_location': ffmpeg_path,
-        'progress_hooks': [lambda d: progress_hook(d, progress_var, progress_bar, status_label)]
+        'progress_hooks': [lambda d: progress_hook(d, progress_var, progress_bar, status_label, audio_format)]
     }
 
     try:
@@ -61,7 +61,7 @@ def download_audio(url, destination_folder, audio_format, progress_var, progress
     except Exception as e:
         messagebox.showerror(translations[current_language]['error_title'], translations[current_language]['download_error'].format(str(e)))
 
-def progress_hook(d, progress_var, progress_bar, status_label):
+def progress_hook(d, progress_var, progress_bar, status_label, audio_format):
     if d['status'] == 'downloading':
         total_bytes = d.get('total_bytes') or d.get('total_bytes_estimate') or 0
         downloaded_bytes = d.get('downloaded_bytes', 0)
@@ -116,9 +116,7 @@ def update_mode():
         select_button.configure(bg='#555', fg='#FFF')
         mp3_button.configure(bg='#555', fg='#FFF')
         wav_button.configure(bg='#555', fg='#FFF')
-        ogg_button.configure(bg='#555', fg='#FFF')
         flac_button.configure(bg='#555', fg='#FFF')
-        m4a_button.configure(bg='#555', fg='#FFF')
     else:
         root.tk_setPalette(background='#FFF', foreground='#000')
         style.configure('TFrame', background='#FFF')
@@ -130,9 +128,7 @@ def update_mode():
         select_button.configure(bg='#F0F0F0', fg='#000')
         mp3_button.configure(bg='#F0F0F0', fg='#000')
         wav_button.configure(bg='#F0F0F0', fg='#000')
-        ogg_button.configure(bg='#F0F0F0', fg='#000')
         flac_button.configure(bg='#F0F0F0', fg='#000')
-        m4a_button.configure(bg='#F0F0F0', fg='#000')
 
 def set_language(lang):
     global current_language
@@ -147,9 +143,7 @@ def update_language():
     destination_label.config(text=translations_for_current_language.get('destination_label', "Destination Folder:"))
     mp3_button.config(text=translations_for_current_language.get('mp3_button', "MP3"))
     wav_button.config(text=translations_for_current_language.get('wav_button', "WAV"))
-    ogg_button.config(text=translations_for_current_language.get('ogg_button', "OGG"))
     flac_button.config(text=translations_for_current_language.get('flac_button', "FLAC"))
-    m4a_button.config(text=translations_for_current_language.get('m4a_button', "M4A"))
     status_label.config(text=translations_for_current_language.get('waiting', "Waiting..."))
     header.config(text=translations_for_current_language.get('window_title', "YouTube Audio Downloader"))
     version_label.config(text=translations_for_current_language.get('version_label', f"Version: {version}"))
@@ -164,9 +158,7 @@ translations = {
         'destination_label': "Destination Folder:",
         'mp3_button': "MP3",
         'wav_button': "WAV",
-        'ogg_button': "OGG",
         'flac_button': "FLAC",
-        'm4a_button': "M4A",
         'mode_button': "Dark Mode",
         'download_complete': "The audio has been successfully downloaded as {}.",
         'download_error': "An error occurred: {}",
@@ -183,52 +175,48 @@ translations = {
         'version_label': f"Version: {version}"
     },
     'PT-BR': {
-        'window_title': "Descargador de √ùudio do YouTube",
-        'url_label': "Link do V√≠deo:",
+        'window_title': "Descargador de ¡udio do YouTube",
+        'url_label': "Link do VÌdeo:",
         'destination_label': "Pasta de Destino:",
         'mp3_button': "MP3",
         'wav_button': "WAV",
-        'ogg_button': "OGG",
         'flac_button': "FLAC",
-        'm4a_button': "M4A",
         'mode_button': "Modo Escuro",
-        'download_complete': "O √°udio foi baixado com sucesso como {}.",
+        'download_complete': "O ·udio foi baixado com sucesso como {}.",
         'download_error': "Ocorreu um erro: {}",
         'downloading': "Baixando: {}% - Velocidade: {:.2f} KiB/s - Tamanho: {:.2f} MiB",
-        'conversion_complete': "Convers√£o completa: {}",
+        'conversion_complete': "Convers„o completa: {}",
         'waiting': "Aguardando...",
-        'success_title': "Download Conclu√≠do",
+        'success_title': "Download ConcluÌdo",
         'error_title': "Erro de Download",
         'warning_title': "Aviso",
-        'enter_url': "Por favor, insira um URL de v√≠deo.",
+        'enter_url': "Por favor, insira um URL de vÌdeo.",
         'choose_folder': "Por favor, selecione uma pasta de destino.",
         'dark_mode': "Modo Escuro",
         'light_mode': "Modo Claro",
-        'version_label': f"Vers√£o: {version}"
+        'version_label': f"Vers„o: {version}"
     },
     'PT-PT': {
-        'window_title': "Descarregador de √ùudio do YouTube",
-        'url_label': "Link do V√≠deo:",
+        'window_title': "Descarregador de ¡udio do YouTube",
+        'url_label': "Link do VÌdeo:",
         'destination_label': "Pasta de Destino:",
         'mp3_button': "MP3",
         'wav_button': "WAV",
-        'ogg_button': "OGG",
         'flac_button': "FLAC",
-        'm4a_button': "M4A",
         'mode_button': "Modo Escuro",
-        'download_complete': "O √°udio foi descarregado com sucesso como {}.",
+        'download_complete': "O ·udio foi descarregado com sucesso como {}.",
         'download_error': "Ocorreu um erro: {}",
         'downloading': "A descarregar: {}% - Velocidade: {:.2f} KiB/s - Tamanho: {:.2f} MiB",
-        'conversion_complete': "Convers√£o completa: {}",
+        'conversion_complete': "Convers„o completa: {}",
         'waiting': "A aguardar...",
         'success_title': "Download Completo",
         'error_title': "Erro de Download",
         'warning_title': "Aviso",
-        'enter_url': "Por favor, insira um URL de v√≠deo.",
+        'enter_url': "Por favor, insira um URL de vÌdeo.",
         'choose_folder': "Por favor, selecione uma pasta de destino.",
         'dark_mode': "Modo Escuro",
         'light_mode': "Modo Claro",
-        'version_label': f"Vers√£o: {version}"
+        'version_label': f"Vers„o: {version}"
     }
 }
 
@@ -250,7 +238,7 @@ header = Label(frame, text=translations[current_language]['window_title'], font=
 header.pack(pady=(10, 0))
 
 version_label = Label(frame, text=translations[current_language]['version_label'], font=('Arial', 12, 'italic'))
-version_label.pack(pady=(5, 20)) 
+version_label.pack(pady=(5, 20))
 
 url_label = Label(frame, text=translations[current_language]['url_label'])
 url_label.pack(pady=5, anchor='w')
@@ -278,14 +266,8 @@ mp3_button.pack(side=tk.LEFT, padx=5)
 wav_button = tk.Button(formats_frame, text=translations[current_language]['wav_button'], command=lambda: start_download('wav'))
 wav_button.pack(side=tk.LEFT, padx=5)
 
-ogg_button = tk.Button(formats_frame, text=translations[current_language]['ogg_button'], command=lambda: start_download('ogg'))
-ogg_button.pack(side=tk.LEFT, padx=5)
-
 flac_button = tk.Button(formats_frame, text=translations[current_language]['flac_button'], command=lambda: start_download('flac'))
 flac_button.pack(side=tk.LEFT, padx=5)
-
-m4a_button = tk.Button(formats_frame, text=translations[current_language]['m4a_button'], command=lambda: start_download('m4a'))
-m4a_button.pack(side=tk.LEFT, padx=5)
 
 progress_var = tk.IntVar()
 progress_bar = Progressbar(frame, orient='horizontal', length=500, mode='determinate', maximum=100, variable=progress_var)
@@ -295,7 +277,7 @@ status_label = Label(frame, text=translations[current_language].get('waiting', "
 status_label.pack(pady=5)
 
 mode_button = tk.Button(root, command=toggle_mode, text=translations[current_language]['mode_button'], width=15)
-mode_button.pack(side=tk.RIGHT, padx=10, pady=10, anchor='se') 
+mode_button.pack(side=tk.RIGHT, padx=10, pady=10, anchor='se')
 
 language_frame = Frame(root)
 language_frame.pack(side=tk.LEFT, padx=10, pady=10, anchor='sw')
