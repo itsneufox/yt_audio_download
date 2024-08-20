@@ -470,6 +470,38 @@ translations = {
         'contributors': "Collaboratori: itsneufox, guighfunky",
         'choose_export_folder': "Scegli Cartella di Esportazione",
         'ffmpeg_missing': "File eseguibile di FFmpeg non trovato. Assicurati che 'ffmpeg.exe' sia nella cartella 'ffmpeg'."
+    },
+    'HE': {
+        'window_title': "YouTube Audio Downloader",
+        'url_label': "קישור לסרטון:",
+        'destination_label': "תיקיית היעד:",
+        'mp3_button': "MP3",
+        'wav_button': "WAV",
+        'flac_button': "FLAC",
+        'language_menu': "שפה",
+        'mode_menu': "מצב",
+        'dark_mode': "עיצוב חשוך",
+        'light_mode': "עיצוב מואר",
+        'download_complete': "ההורדה הסתיימה כ {}.",
+        'download_error': "קרתה תקלה: {}",
+        'downloading': "מוריד: {}% - מהירות: {:.2f} KiB/s - גודל: {:.2f} MiB",
+        'conversion_complete': "ההמרה הושלמה: {}",
+        'waiting': "ממתין...",
+        'success_title': "ההורדה הושלמה",
+        'error_title': "שגיאת הורדה",
+        'warning_title': "שגיאה בקלט",
+        'enter_url': "אנא הזן קישור תקין של סרטון.",
+        'choose_folder': "אנא בחר תיקיית יעד.",
+        'download_count': "הורדו {}/{} סרטונים",
+        'processing': "מעבד: {}",
+        'version_label': "גרסה: 1.1.0",
+        'about_menu': "אודות",
+        'about_title': "אודות",
+        'about_tool_name': "YouTube Audio Downloader",
+        'repo_link': "רפוזיטורי: https://github.com/itsneufox/yt_audio_download",
+        'contributors': "תורמים: itsneufox, guighfunky",
+        'choose_export_folder': "בחר תיקיית יעד",
+        'ffmpeg_missing': "הקובץ של FFmpeg לא נמצא. אנא וודא שהקובץ 'ffmpeg.exe' נמצא בתוך התיקייה 'ffmpeg'."
     }
 }
 
