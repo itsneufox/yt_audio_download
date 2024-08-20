@@ -275,7 +275,7 @@ translations = {
         'about_title': "About",
         'about_tool_name': "YouTube Audio Downloader",
         'repo_link': "Repository: https://github.com/itsneufox/yt_audio_download",
-        'contributors': "Contributors: itsneufox, guighfunky",
+        'contributors': "Contributors: itsneufox, guighfunky, itsrn",
         'choose_export_folder': "Choose Export Folder",
         'ffmpeg_missing': "FFmpeg executable not found. Please make sure 'ffmpeg.exe' is in the 'ffmpeg' folder."
     },
@@ -286,7 +286,7 @@ translations = {
         'mp3_button': "MP3",
         'wav_button': "WAV",
         'flac_button': "FLAC",
-        'language_menu': "Idioma",
+        'language_menu': "Linguagem",
         'mode_menu': "Modo",
         'dark_mode': "Modo Escuro",
         'light_mode': "Modo Claro",
@@ -307,7 +307,7 @@ translations = {
         'about_title': "Sobre",
         'about_tool_name': "Baixador de Áudio do YouTube",
         'repo_link': "Repositório: https://github.com/itsneufox/yt_audio_download",
-        'contributors': "Contribuidores: itsneufox, guighfunky",
+        'contributors': "Contribuidores: itsneufox, guighfunky, itsrn",
         'choose_export_folder': "Escolher Pasta de Exportação",
         'ffmpeg_missing': "Executável do FFmpeg não encontrado. Certifique-se de que 'ffmpeg.exe' está na pasta 'ffmpeg'."
     },
@@ -318,7 +318,7 @@ translations = {
         'mp3_button': "MP3",
         'wav_button': "WAV",
         'flac_button': "FLAC",
-        'language_menu': "Idioma",
+        'language_menu': "Linguagem",
         'mode_menu': "Modo",
         'dark_mode': "Modo Escuro",
         'light_mode': "Modo Claro",
@@ -339,7 +339,7 @@ translations = {
         'about_title': "Sobre",
         'about_tool_name': "Descarregador de Áudio do YouTube",
         'repo_link': "Repositório: https://github.com/itsneufox/yt_audio_download",
-        'contributors': "Contribuidores: itsneufox, guighfunky",
+        'contributors': "Contribuidores: itsneufox, guighfunky, itsrn",
         'choose_export_folder': "Escolher Pasta de Exportação",
         'ffmpeg_missing': "Executável do FFmpeg não encontrado. Certifique-se de que 'ffmpeg.exe' está na pasta 'ffmpeg'."
     },
@@ -371,7 +371,7 @@ translations = {
         'about_title': "Acerca de",
         'about_tool_name': "Descargador de Audio de YouTube",
         'repo_link': "Repositorio: https://github.com/itsneufox/yt_audio_download",
-        'contributors': "Colaboradores: itsneufox, guighfunky",
+        'contributors': "Colaboradores: itsneufox, guighfunky, itsrn",
         'choose_export_folder': "Elegir Carpeta de Exportación",
         'ffmpeg_missing': "No se encontró el ejecutable de FFmpeg. Asegúrate de que 'ffmpeg.exe' esté en la carpeta 'ffmpeg'."
     },
@@ -403,7 +403,7 @@ translations = {
         'about_title': "À Propos",
         'about_tool_name': "Téléchargeur Audio YouTube",
         'repo_link': "Répertoire : https://github.com/itsneufox/yt_audio_download",
-        'contributors': "Contributeurs : itsneufox, guighfunky",
+        'contributors': "Contributeurs : itsneufox, guighfunky, itsrn",
         'choose_export_folder': "Choisir Dossier d'Exportation",
         'ffmpeg_missing': "L'exécutable FFmpeg est introuvable. Assurez-vous que 'ffmpeg.exe' est dans le dossier 'ffmpeg'."
     },
@@ -435,7 +435,7 @@ translations = {
         'about_title': "Über",
         'about_tool_name': "YouTube Audio Downloader",
         'repo_link': "Repository: https://github.com/itsneufox/yt_audio_download",
-        'contributors': "Mitwirkende: itsneufox, guighfunky",
+        'contributors': "Mitwirkende: itsneufox, guighfunky, itsrn",
         'choose_export_folder': "Exportordner wählen",
         'ffmpeg_missing': "FFmpeg-Programm nicht gefunden. Stellen Sie sicher, dass sich 'ffmpeg.exe' im Ordner 'ffmpeg' befindet."
     },
@@ -467,7 +467,7 @@ translations = {
         'about_title': "Informazioni",
         'about_tool_name': "Downloader Audio YouTube",
         'repo_link': "Repository: https://github.com/itsneufox/yt_audio_download",
-        'contributors': "Collaboratori: itsneufox, guighfunky",
+        'contributors': "Collaboratori: itsneufox, guighfunky, itsrn",
         'choose_export_folder': "Scegli Cartella di Esportazione",
         'ffmpeg_missing': "File eseguibile di FFmpeg non trovato. Assicurati che 'ffmpeg.exe' sia nella cartella 'ffmpeg'."
     },
@@ -499,11 +499,13 @@ translations = {
         'about_title': "אודות",
         'about_tool_name': "YouTube Audio Downloader",
         'repo_link': "רפוזיטורי: https://github.com/itsneufox/yt_audio_download",
-        'contributors': "תורמים: itsneufox, guighfunky",
+        'contributors': "תורמים: itsneufox, guighfunky, itsrn",
         'choose_export_folder': "בחר תיקיית יעד",
         'ffmpeg_missing': "הקובץ של FFmpeg לא נמצא. אנא וודא שהקובץ 'ffmpeg.exe' נמצא בתוך התיקייה 'ffmpeg'."
     }
+
 }
+
 
 dest_folder, current_language, dark_mode, audio_format = load_config()
 
@@ -567,6 +569,7 @@ language_menu.add_command(label="Español", command=lambda: set_language('ES'))
 language_menu.add_command(label="Français", command=lambda: set_language('FR'))
 language_menu.add_command(label="Deutsch", command=lambda: set_language('DE'))
 language_menu.add_command(label="Italiano", command=lambda: set_language('IT'))
+language_menu.add_command(label="Hebrew", command=lambda: set_language('HE'))
 language_menu.add_command(label="Português (BR)", command=lambda: set_language('PT-BR'))
 language_menu.add_command(label="Português (PT)", command=lambda: set_language('PT-PT'))
 
