@@ -7,6 +7,8 @@ from tkinter import filedialog, messagebox, Toplevel
 from tkinter.ttk import Progressbar, Label, Frame, Style
 from threading import Thread
 
+repo_label = None
+
 try:
     import yt_dlp
 except ImportError:
@@ -130,9 +132,13 @@ def select_destination_folder():
 
 def toggle_mode():
     global dark_mode
+    global repo_label
     dark_mode = not dark_mode
     update_mode()
-    update_link_color(repo_label)
+    
+    if repo_label is not None:
+        update_link_color(repo_label)
+        
     mode_text = translations[current_language]['light_mode'] if dark_mode else translations[current_language]['dark_mode']
     mode_menu.entryconfig(0, label=mode_text)
 
@@ -196,7 +202,7 @@ def update_language():
 def open_about_window():
     about_window = Toplevel(root)
     about_window.title(translations[current_language]['about_title'])
-    about_window.geometry("400x350")
+    about_window.geometry("450x350")
 
     icon_path = os.path.join(os.path.dirname(__file__), 'ico', 'icon.ico')
     about_window.iconbitmap(icon_path)
@@ -280,7 +286,7 @@ translations = {
         'mp3_button': "MP3",
         'wav_button': "WAV",
         'flac_button': "FLAC",
-        'language_menu': "Linguagem",
+        'language_menu': "Idioma",
         'mode_menu': "Modo",
         'dark_mode': "Modo Escuro",
         'light_mode': "Modo Claro",
@@ -312,7 +318,7 @@ translations = {
         'mp3_button': "MP3",
         'wav_button': "WAV",
         'flac_button': "FLAC",
-        'language_menu': "Linguagem",
+        'language_menu': "Idioma",
         'mode_menu': "Modo",
         'dark_mode': "Modo Escuro",
         'light_mode': "Modo Claro",
