@@ -89,13 +89,13 @@ A simple GUI application for downloading audio from YouTube videos and convertin
     - **With Terminal Window:**
 
         ```bash
-        pyinstaller --onefile --add-data "ffmpeg/ffmpeg.exe;ffmpeg" --add-data "ffmpeg/ffprobe.exe;ffmpeg" --icon="ico/icon.ico" app.py
+        pyinstaller --clean --onefile --add-data "ico/icon.ico;ico" --add-data "ico/icon.png;ico" --add-data "ffmpeg/ffmpeg.exe;ffmpeg" --add-data "ffmpeg/ffprobe.exe;ffmpeg" --icon="ico/icon.ico" app.py
         ```
 
     - **Without Terminal Window:**
 
         ```bash
-        pyinstaller --onefile --windowed --add-data "ffmpeg/ffmpeg.exe;ffmpeg" --add-data "ffmpeg/ffprobe.exe;ffmpeg" --icon="ico/icon.ico" app.py
+        pyinstaller --clean --onefile --windowed --add-data "ico/icon.ico;ico" --add-data "ico/icon.png;ico" --add-data "ffmpeg/ffmpeg.exe;ffmpeg" --add-data "ffmpeg/ffprobe.exe;ffmpeg" --icon="ico/icon.ico" app.py
         ```
 
     This command ensures that `ffmpeg` and `ffprobe` are included in the executable and sets the application icon. The `--windowed` option is used to build a GUI-only application without a terminal window.
